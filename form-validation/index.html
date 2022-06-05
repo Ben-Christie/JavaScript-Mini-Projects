@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validation</title>
+
+  <!--Favicon - the icon that appears beside the name of the page in the tab - to change replace jacinto.design with your own favicon-->
+  <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=jacinto.design">
+
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/51ca19b7fd.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Sign Up Today!</h1>
+
+    <!-- form -->
+    <form id="form">
+      <!-- full name -->
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Full Name" minlength="3" maxlength="100" required>
+      </div>
+
+      <!-- phone number -->
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <!-- patterns defines the phone number format, in the case below we say we want 3 numbers 0-9 and then a - and then another 3 numbers etc. so that the format looks like 123-456-7890 -->
+        <input type="tel" id="phone" name="phone" placeholderr="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+      </div>
+
+      <!-- email address -->
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder=""email@address.com" required>
+      </div>
+
+      <!-- website url -->
+      <div class="form-group">
+        <label for="website">Website URL</label>
+        <input type="url" id="website" name="website" placeholder="http://website.com" required>
+      </div>
+
+      <!-- password -->
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <!-- pattern requires the user to input 8 chars at least with a lower and upper case character as well as a digit, the title will be used in the error message to the use rif they don't meet the criteria -->
+        <input type="password" id="password1" placeholder="Create Password (Min. 8 Characters)" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" title="Please include 1 upper-case letter, 1 lower-case letter, and 1 digit" required>
+      </div>
+
+      <!-- confirm password -->
+      <div class="form-group">
+        <label for="password2">Confirm Password</label>
+        <input type="password" id="password2" name="password" placeholder=""Confirm Password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$" required>
+      </div>
+
+      <button type="submit">Register</button>
+
+    </form>
+
+    <!-- error/sucess message -->
+    <div class="message-container">
+      <h3 id="message">Don't Hesitate!</h3>
+    </div>
+
+  </div>
+
+  <!--Script-->
+  <script src="script.js"></script>
+</body>
+</html>

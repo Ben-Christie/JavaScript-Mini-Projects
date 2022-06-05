@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NASA API Pictures</title>
+
+  <!--Favicon - the icon that appears beside the name of the page in the tab - to change replace jacinto.design with your own favicon-->
+  <link rel="icon" type="image/png" href="https://www.google.com/s2/u/0/favicons?domain=www.nasa.gov">
+
+  <!--Font Awesome-->
+  <script src="https://kit.fontawesome.com/51ca19b7fd.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- loader -->
+  <!-- cant simply use hidden attribute as we're using display:flex on this div so have to create our own hidden class in the css -->
+  <div class="loader hidden">
+    <img src="rocket.svg" alt="Rocket Loading Animation">
+  </div>
+
+  <!-- container -->
+  <div class="container">
+    <!-- navigation -->
+    <div class="navigation-container">
+      <!-- using spans instead of divs because spans don't take up space -->
+      <span class="background">
+        <!-- results nav -->
+        <span class="navigation-items" id="resultsNav">
+          <h3 class="clickable" onclick="updateDom('favourites')">Favourites</h3>
+          <!-- &nbsp; - non breakable space -> space that will not be removed when the page is created -->
+          <h3>&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</h3>
+          <h3 class="clickable" onclick="getNasaPictures()">Load More</h3>
+        </span>
+
+        <!-- favourites nav -->
+        <span class="navigation-items hidden" id="favouritesNav">
+          <h3 class="clickable" onclick="getNasaPictures()">Load More NASA Images</h3>
+        </span>
+
+      </span>
+    </div>
+
+    <!-- images container -->
+    <div class="images-container">
+
+    </div>
+
+  </div>
+
+  <!-- save confirmation -->
+  <div class="save-confirmed" hidden>
+    <h1>ADDED!</h1>
+  </div>
+
+  <!--Script-->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+/* ROBOT.GIF from Giphy - https://giphy.com/gifs/robot-cinema-4d-eyedesyn-3o7abtn7DuREEpsyWY */
+
+/*prevent padding from adding extra width/height to the page*/
+html {
+  box-sizing: border-box;
+}
+
+/*100vh = 100% of view height*/
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #45badd;
+}
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  /* 2 items go one under the other not beside each other */
+  flex-direction: column;
+  /* center horizontally with flex */
+  justify-content: center;
+  /* center vertically with flex */
+  align-items: center;
+  background: url('./robot.gif');
+  /* image will be fully visible on the screen */
+  background-size: contain;
+  /* horizontal property vertical property */
+  background-position: left center;
+  /* only want 1 instance of the background */
+  background-repeat: no-repeat;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  width: 200px;
+  height: 50px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  color: white;
+  background: #ff3482;
+  border: none;
+  border-radius: 5px;
+  /* horizontal vertical blur spread colour */
+  box-shadow: 2px 2px 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+  filter: brightness(95%);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  cursor: default;
+  filter: brightness(30%);
+}
+
+/* media query: tablet or smaller */
+@media screen and (max-width: 100px) {
+  .container {
+    background: center center;
+    background-size: cover;
+  }
+
+  button {
+    box-shadow: 5px 5px 30px 20px rgba(0, 0, 0, 0.5);
+  }
+}

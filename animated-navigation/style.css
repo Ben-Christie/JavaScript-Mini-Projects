@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+/* put variables in :root so they can be used globally */
+:root {
+  /* css variables */
+  --primaryColor: #fff;
+  --navColor1: #00a676ff;
+  --navColor2: #f8e16cff;
+  --navColor3: #ffc2b4ff;
+  --navColor4: #fb8f67ff;
+  --navColor5: #81717aff;
+
+  --green-munsell: ;
+    --yellow-crayola: ;
+    --melon: ;
+    --coral: ;
+    --old-lavender: ;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: Nunito, sans-serif;
+}
+
+/* --- Navigation Menu ------------------------------ */
+
+/* Overlay */
+.overlay {
+  /* keep in the same place on the page */
+  position: fixed;
+  /* keep on top of all other elements on page, default is 1*/
+  z-index: 9;
+  /* starts in the top left */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* we want our overlay to be 100 the width of the screen off the page */
+  transform: translateX(-100vw);
+}
+
+.overlay-slide-right {
+  /* bring back into view smoothly */
+  transition: all 0.4s ease-in-out;
+  /* bring back into view */
+  transform: translateX(0);
+}
+
+.overlay-slide-left {
+  transition: all 0.8s ease-in-out;
+  /* remove from view again */
+  transform: translateX(-100vw);
+}
+
+/* Nav Menu Items */
+nav, nav ul {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+na ul {
+  display: flex;
+  /* align one under the other not left to right */
+  flex-direction: column;
+  /* stretch to fit the width of the page */
+  justify-content: stretch;
+  /* make sure no bullet points */
+  list-style: none;
+}
+
+nav ul li {
+  height: 20%;
+  /* don't stretch the page, dont want scroll bar */
+  overflow: hidden;
+}
+
+nav li a {
+  position: relative;
+  top: 45%;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  /* no underline */
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+/* make text pop */
+nav li a:hover {
+  transform: scale(1.2);
+}
+
+/* add content before our element - to the left side of it, here we'll add a white line */
+nav li a::before {
+  content: "";
+  width: 25vw;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 47.5%;
+  left: 0;
+  /* invisible */
+  opacity: 0;
+}
+
+nav li a:hover::before {
+  /* made visible when hovered over */
+  opacity: 1;
+}
+
+/* target the first element in the list, this will be used for each element in the list */
+nav li:nth-of-type(1) {
+  background-color: var(--navColor1);
+}
+
+nav li:nth-of-type(2) {
+  background-color: var(--navColor2);
+}
+
+nav li:nth-of-type(3) {
+  background-color: var(--navColor3);
+}
+
+nav li:nth-of-type(4) {
+  background-color: var(--navColor4);
+}
+
+nav li:nth-of-type(5) {
+  background-color: var(--navColor5);
+}
+
+/* slide in animation with delay for each nav item */
+.slide-in-1 {
+  /* name of animation, duration, moves at speed, delay, animation fill mode */
+  animation: slide-in 0.4s linear 0.2s both;
+}
+
+.slide-in-2 {
+  animation: slide-in 0.4s linear 0.4s both;
+}
+
+.slide-in-3 {
+  animation: slide-in 0.4s linear 0.6s both;
+}
+
+.slide-in-4 {
+  animation: slide-in 0.4s linear 0.8s both;
+}
+
+.slide-in-5 {
+  animation: slide-in 0.4s linear 1s both;
+}
+
+/* animation */
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* slide out animation with delay for each nav item */
+.slide-out-1 {
+  /* name of animation, duration, moves at speed, delay, animation fill mode */
+  animation: slide-out 0.3s linear 0.5s both;
+}
+
+.slide-out-2 {
+  animation: slide-out 0.3s linear 0.4s both;
+}
+
+.slide-out-3 {
+  animation: slide-out 0.3s linear 0.3s both;
+}
+
+.slide-out-4 {
+  animation: slide-out 0.3s linear 0.2s both;
+}
+
+.slide-out-5 {
+  animation: slide-out 0.3s linear 0.1s both;
+}
+
+/* animation */
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* --- Menu Bars ------------------------------------ */
+
+/* https: //www.w3schools.com/howto/howto_css_menu_icon.asp */
+
+.menu-bars {
+  position: fixed;
+  top: 1rem;
+  right: 2rem;
+  z-index: 10;
+  display: inline;
+  cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+  width: 35px;
+  height: 2px;
+  background-color: #fff;
+  margin: 8px 0;
+  transition: 0.4s;
+}
+
+/* Rotate first bar */
+.change .bar1 {
+  transform: rotate(-45deg) translate(-7px, 8px);
+}
+
+/* Fade out the second bar */
+.change .bar2 {
+  opacity: 0;
+}
+
+/* Rotate last bar */
+.change .bar3 {
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+/* --- Sections ------------------------------------ */
+
+section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primaryColor);
+}
+
+section#home {
+  background-image: url("https://images.unsplash.com/photo-1581453904507-626ddb717f14?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2089&q=80");
+  background-size: cover;
+  background-position: center center;
+}
+
+section#home a {
+  position: absolute;
+  z-index: 2;
+  top: 1.5rem;
+  left: 1.5rem;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding-bottom: 5px;
+  color: var(--primaryColor);
+  border-bottom: 1px solid var(--primaryColor);
+}
+
+section#about {
+  background-color: var(--navColor2);
+}
+
+section#skills {
+  background-color: var(--navColor3);
+}
+
+section#projects {
+  background-color: var(--navColor4);
+}
+
+section#contact {
+  background-color: var(--navColor5);
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media (max-width: 600px) {
+  section#home a {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .menu-bars {
+    top: 0.5rem;
+    right: 1rem;
+  }
+}

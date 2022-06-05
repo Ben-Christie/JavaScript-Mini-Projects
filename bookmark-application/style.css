@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
+:root {
+  --primary-color: rgb(39, 174, 211);
+  --border-radius: 5px;
+}
+
+/*prevent padding from adding extra width/height to the page*/
+html {
+  box-sizing: border-box;
+}
+
+/*100vh = 100% of view height*/
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--primary-color);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' width='80' height='80'%3E%3Cpath fill='%23ffffff' fill-opacity='0.4' d='M14 16H9v-2h5V9.87a4 4 0 1 1 2 0V14h5v2h-5v15.95A10 10 0 0 0 23.66 27l-3.46-2 8.2-2.2-2.9 5a12 12 0 0 1-21 0l-2.89-5 8.2 2.2-3.47 2A10 10 0 0 0 14 31.95V16zm40 40h-5v-2h5v-4.13a4 4 0 1 1 2 0V54h5v2h-5v15.95A10 10 0 0 0 63.66 67l-3.47-2 8.2-2.2-2.88 5a12 12 0 0 1-21.02 0l-2.88-5 8.2 2.2-3.47 2A10 10 0 0 0 54 71.95V56zm-39 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm40-40a2 2 0 1 1 0-4 2 2 0 0 1 0 4zM15 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm40 40a2 2 0 1 0 0-4 2 2 0 0 0 0 4z'%3E%3C/path%3E%3C/svg%3E");
+  font-family: Karla, sans-serif;
+}
+
+h1 {
+  color: white;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  width: 275px;
+  /* top left/right bottom */
+  margin: 20px auto 10px;
+  /* wont act as text, wont be highlightable */
+  user-select: none;
+}
+
+h1:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/* Bookmarks */
+
+.container {
+  display: flex;
+  /* make everything go left to right */
+  flex-direction: row;
+  /* instead of creating horizontal scroll bar will break to the next line */
+  flex-wrap: wrap;
+}
+
+/* parent container for each individual bookmark */
+.item {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin: 10px;
+}
+
+.item:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+a {
+  font-size: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* LoVe HAte */
+
+/* Link Visited */
+a:link, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hover Active */
+a:hover, a:active {
+  text-decoration: underline;
+}
+
+.fa-times {
+  /* put it to the right of its parent */
+  float: right;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.name {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.name img {
+  height: 20px;
+  width: 20px;
+  /* make img line up with the bottom of the element next to it */
+  vertical-align: sub;
+  margin-right: 5px;
+}
+
+/* Modal */
+
+/* overlay */
+.modal-container {
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  position: fixed;
+  /* tie to all 4 corners of the page to take up entire page */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.show-modal {
+  display: flex;
+  /* center horizontally and vertically respectively */
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background: white;
+  /* all the way around 10px blur */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  /* for smartphone */
+  max-width: 95%;
+  /* for desktop */
+  width: 500px;
+  /* name duration */
+  animation: modalopen 1s;
+}
+
+/* will not alter the value of the opacity */
+@keyframes modalopen {
+  from {
+    /* 0% */
+    opacity: 0;
+  }
+
+  to {
+    /* 100% */
+    opacity: 1;
+  }
+}
+
+.close-icon {
+  float: right;
+  color: white;
+  font-size: 24px;
+  position: relative;
+  top: 13;
+  right: 13px;
+  cursor: pointer;
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 15px;
+}
+
+h3 {
+  margin: 0;
+}
+
+.modal-content {
+  padding: 20px;
+  background-color: whitesmoke;
+}
+
+/* Form */
+/* wrapping label and input */
+.form-group {
+  height: 55px;
+}
+
+.form-input {
+  width: 97%;
+  padding: 5px;
+  border: 2px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  /* take up entire line */
+  display: block;
+  outline: none;
+}
+
+.form-label {
+  color: var(--primary-color);
+  /* on own line */
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  color: white;
+  background: var(--primary-color);
+  height: 30px;
+  width: 100px;
+  border: none;
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+}
+
+button:hover {
+  /* 10% brighter */
+  filter: brightness(110%);
+}
+
+/* normally when you click on a button you get a black outline so we remove that here */
+button:focus {
+  outline: none;
+}
+
+/* Media Query: Large Smartphone (Vertical) */
+@media screen and (max-width: 600px) {
+  .container {
+    /* put one other the other */
+    flex-direction: column;
+  }
+}

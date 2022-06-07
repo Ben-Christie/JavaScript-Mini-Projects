@@ -17,7 +17,8 @@
 13. NASA API Pictures of the Day
 14. Microsoft Paint Clone
 15. Picture in Picture
-16. Quote Generator
-17. Rock Paper Scissors Game
-18. Splash Page
-19. Video Player
+16. Pong Game
+17. Quote Generator
+18. Rock Paper Scissors Game
+19. Splash Page
+20. Video Player

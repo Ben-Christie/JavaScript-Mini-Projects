@@ -1,6 +1,6 @@
 # JavaScript-Mini-Projects
 
-**20 Mini Projects built using HTML 5, CSS 3 &amp; JavaScript**
+**19 Mini Projects built using HTML 5, CSS 3 &amp; JavaScript**
 
 1. Animated Landing Page
 2. Animated Navigation
@@ -17,8 +17,7 @@
 13. NASA API Pictures of the Day
 14. Microsoft Paint Clone
 15. Picture in Picture
-16. Pong Game
-17. Quote Generator
-18. Rock Paper Scissors Game
-19. Splash Page
-20. Video Player
+16. Quote Generator
+17. Rock Paper Scissors Game
+18. Splash Page
+19. Video Player

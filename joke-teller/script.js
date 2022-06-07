@@ -36,8 +36,6 @@ async function getJokes() {
 
     // if theres a setup its a 2 part joke not a 1 part joke
     if (data.setup) {
-      // concat setup and delivery, use back-tick (under esc key) not single quotes
-      // ... used for pause in speech
       joke = `${data.setup} ... ${data.delivery}`;
     } else {
       joke = data.joke;

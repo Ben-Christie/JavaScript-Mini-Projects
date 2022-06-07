@@ -106,7 +106,7 @@ function createCanvas() {
 function ballReset() {
   ballX = width / 2;
   ballY = height / 2;
-  speedY = -3;
+  speedY = -3; // sends the ball down the screen
   paddleContact = false;
 }
 

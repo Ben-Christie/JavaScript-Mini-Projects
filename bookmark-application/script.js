@@ -10,33 +10,6 @@ const bookmarksContainer = document.getElementById('bookmarks-container');
 
 let bookmarks = [];
 
-/*
-  instead of doing let bookmarks = [];
-  we could do let bookmarks = {}; where bookmarks is now an object not an array
-
-  the benefit of this will be seen in the delete method where instead of looping through the entire array and checking against each url, and then splcing that item out
-
-  instead of an array we'd have a format of:
-  bookmarks[id] = {
-    name: '',
-    url: '',
-  }
-
-  each bookmark has an id
-
-  we could simply do:
-  if(bookmarks[id]) {
-    delete.bookmarks[id];
-  }
-
-  improved performance as we don't have to loop through what could be 100's of values
-
-  also in the build method we would have to loop so would look like this:
-  Object.keys(bookmarks).forEach((id) => {
-    same code in here
-  });
-*/
-
 // show modal, focus on input to rapidly enter more bookmarks
 function showModal() {
   // show-modal class is used to trigger the modal

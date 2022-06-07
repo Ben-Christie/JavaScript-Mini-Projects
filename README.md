@@ -1,6 +1,6 @@
 # JavaScript-Mini-Projects
 
-**19 Mini Projects built using HTML 5, CSS 3 &amp; JavaScript**
+**20 Mini Projects built using HTML 5, CSS 3 &amp; JavaScript**
 
 1. Animated Landing Page
 2. Animated Navigation
